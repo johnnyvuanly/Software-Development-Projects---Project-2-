@@ -4,7 +4,7 @@ from database_config import db_path
 db = SqliteDatabase(db_path)
 
 class Inventory(Model):
-    material = CharField
+    name = CharField
     cost = CharField
     stock = IntegerField
     vendor = CharField 
