@@ -14,6 +14,19 @@ def main():
     while user_input != 6:
         user_input = int(input('Enter Choice: '))
 
+        if user_input == 1:
+            add_material()
+        elif user_input == 2:
+            show_all_material()
+        elif user_input == 3:
+            show_available_material()
+        elif user_input == 4:
+            delete_material()
+        elif user_input == 5:
+            change_availability()
+        
+        elif user_input == 7:
+            break
         print_menu()
 
 def print_menu():
