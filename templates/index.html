@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Concrete Craft Inventory Tracker</h1>
+
+<form action="/get-inventory" method="GET" >
+
+    <select name="category">
+      <option value="boxes"/>boxes
+      <option value="funny"/>funny
+      <option value="hats"/>hats
+      <option value="sinks"/>sinks
+      <option value="space"/>space
+    </select>
+  
+    <input type ="submit" value="GO"/>
+  
+  </form>
+
+{% endblock %}
