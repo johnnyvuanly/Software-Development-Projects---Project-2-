@@ -25,7 +25,7 @@ def main():
         elif user_input == 5:
             change_availability()
         
-        elif user_input == 7:
+        elif user_input == 6:
             break
         print_menu()
 
