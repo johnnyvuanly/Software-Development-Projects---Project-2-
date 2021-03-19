@@ -15,7 +15,7 @@ class Inventory(Model):
 
     def __str__(self):
         availability_status = 'is' if self.available else 'is not'
-        return f'This {availability_status} avaiable. There is {self.stock} left of {self.name} which costs {self.cost} and is purchased from {self.vendor}'
+        return f'This {availability_status} avaiable. There is {self.stock} left of {self.name} which costs ${self.cost} and is purchased from {self.vendor}'
 
 db.connect()
 db.create_tables([Inventory])

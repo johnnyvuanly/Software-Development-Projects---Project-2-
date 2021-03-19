@@ -1,13 +1,13 @@
 from model import Inventory
 from peewee import fn
 
-def delete_material(material):
+def delete_material(name):
     """ Removes material from inventory. Raises MaterialError if material is not in the inventory.
     :param material the Inventory to delete """
 
-    rows_deleted = Inventory.delete().where(Inventory.id == material.id).execute()
+    rows_deleted = Inventory.delete().where(Inventory.name == name).execute()
     if not rows_deleted:
-        raise MaterialError('Tried to delte book that does not exist')
+        raise MaterialError('Tried to delete book that does not exist')
 
 def delete_all_material():
     """ Deletes all material from database """ 
@@ -30,7 +30,7 @@ def material_search(term):
     :param: term the search term
     :returns a list of materials that match the search term. The list will be empty if there are no matches.
     """
-    query = Inventory.select().where( (fn.LOWER(Inventory.name).contains(term.lower() ) ))
+    query = Inventory.select().where( (fn.LOWER(Inventory.name).contains(term.lower() ) ) )
     return list(query)
 
 def get_materials_by_availability(available):
